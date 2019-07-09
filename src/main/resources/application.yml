@@ -1,0 +1,22 @@
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    uri: git@github.com:sfg-beer-works/sfg-config-repo.git
+#                    skipSslValidation: true
+#                    search-paths: beer*
+server:
+    port: 8888
+logging:
+    level:
+        org.springframework.cloud: debug
+#        org.eclipse.jgit: debug
+        org.springframework.web: debug
+management:
+    endpoint:
+        health:
+            show-details: always
+        mappings:
+            enabled: true
+#        org.springframework: debug
