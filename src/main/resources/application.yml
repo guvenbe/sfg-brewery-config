@@ -1,17 +1,30 @@
 spring:
+    application:
+        name: brewery-config
     profiles:
-        active: native
+      ##  active: git
     cloud:
         config:
+#            discovery:
+#                enabled: true
             server:
-                native:
-                    search-locations: classpath:/config/{application},classpath:/config/{application}-{profile},
+                git:
+                    #note on URI
+                    uri: https://github.com/sfg-beer-works/sfg-config-repo/
+                    clone-on-start: true
+                   # username: springframeworkguru
+                    #Needed to setup search paths
+                    search-paths: '{application}'
+    security:
+      user:
+          password: myPassword
+          name: myUserName
 server:
     port: 8888
 logging:
     level:
         org.springframework.cloud: debug
-       # org.springframework.web: debug
+        org.springframework.web: debug
 management:
     endpoint:
         health:
