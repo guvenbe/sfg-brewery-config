@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.0.RELEASE</version>
-        <relativePath /> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <groupId>com.github.bg-beer-works</groupId>
@@ -100,9 +101,15 @@
 
     <profiles>
         <profile>
-            <id>ossrh</id>
+            <id>dockerbuild</id>
+            <activation>
+                <file>
+                    <exists>src/main/docker/Dockerfile</exists>
+                </file>
+            </activation>
             <build>
                 <plugins>
+                    <!--   push to docker with release-->
                     <plugin>
                         <groupId>io.fabric8</groupId>
                         <artifactId>docker-maven-plugin</artifactId>
@@ -117,6 +124,13 @@
                             </execution>
                         </executions>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>ossrh</id>
+            <build>
+                <plugins>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -153,6 +167,11 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <!--                Exclude Lombok enhanced classes-->
+                            <excludePackageNames>guru.sfg.brewery.model.*:*.mapper.*:*.domain.*:*.mappers.*
+                            </excludePackageNames>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
@@ -172,6 +191,7 @@
             </build>
         </profile>
     </profiles>
+
     <scm>
         <connection>scm:git:git@github.com:guvenbe/sfg-brewery-eureka.git</connection>
         <developerConnection>scm:git:git@github.com:guvenbe/sfg-brewery-eureka.git</developerConnection>
