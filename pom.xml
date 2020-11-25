@@ -10,7 +10,7 @@
 
     <groupId>com.github.bg-beer-works</groupId>
     <artifactId>sfg-brewery-config</artifactId>
-    <version>1.0.57</version>
+    <version>1.0.57-SNAPSHOT</version>
     <name>sfg-brewery-config</name>
     <description>SFG Brewery Config</description>
 
@@ -192,9 +192,9 @@
     </profiles>
 
     <scm>
-        <connection>scm:git:git@github.com:guvenbe/sfg-brewery-eureka.git</connection>
-        <developerConnection>scm:git:git@github.com:guvenbe/sfg-brewery-eureka.git</developerConnection>
-        <url>https://github.com/guvenbe/sfg-brewery-eureka</url>
+        <connection>scm:git:git@github.com:guvenbe/sfg-brewery-config.git</connection>
+        <developerConnection>scm:git:git@github.com:guvenbe/sfg-brewery-config.git</developerConnection>
+        <url>https://github.com/guvenbe/sfg-brewery-config</url>
         <tag>sfg-brewery-config-1.0.57</tag>
     </scm>
 
