@@ -8,9 +8,9 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.github.sfg-beer-works</groupId>
+    <groupId>com.github.bg-beer-works</groupId>
     <artifactId>sfg-brewery-config</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.53-SNAPSHOT</version>
     <name>sfg-brewery-config</name>
     <description>SFG Brewery Config</description>
 
@@ -173,20 +173,20 @@
         </profile>
     </profiles>
     <scm>
-        <connection>scm:git:git@github.com:sfg-beer-works/sfg-brewery-config.git</connection>
-        <developerConnection>scm:git:git@github.com:sfg-beer-works/sfg-brewery-config.git</developerConnection>
-        <url>https://github.com/sfg-beer-works/sfg-brewery-config</url>
+        <connection>scm:git:git@github.com:guvenbe/sfg-brewery-eureka.git</connection>
+        <developerConnection>scm:git:git@github.com:guvenbe/sfg-brewery-eureka.git</developerConnection>
+        <url>https://github.com/guvenbe/sfg-brewery-eureka</url>
         <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>packagecloud.release</id>
+            <url>packagecloud+https://packagecloud.io/guvenbe/release</url>
         </repository>
+        <snapshotRepository>
+            <id>packagecloud.snapshot</id>
+            <url>packagecloud+https://packagecloud.io/guvenbe/snapshot</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
