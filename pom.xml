@@ -10,7 +10,7 @@
 
     <groupId>com.github.bg-beer-works</groupId>
     <artifactId>sfg-brewery-config</artifactId>
-    <version>1.0.62-SNAPSHOT</version>
+    <version>1.0.62</version>
     <name>sfg-brewery-config</name>
     <description>SFG Brewery Config</description>
 
@@ -202,7 +202,7 @@
         <connection>scm:git:git@github.com:guvenbe/sfg-brewery-config.git</connection>
         <developerConnection>scm:git:git@github.com:guvenbe/sfg-brewery-config.git</developerConnection>
         <url>https://github.com/guvenbe/sfg-brewery-config</url>
-        <tag>sfg-brewery-config-1.0.59</tag>
+        <tag>sfg-brewery-config-1.0.62</tag>
     </scm>
 
     <distributionManagement>
